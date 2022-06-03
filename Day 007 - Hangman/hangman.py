@@ -1,7 +1,6 @@
 from random import choice
 
 def desenha(erro):
-    inicio = len(palavra)
     if erro == 1:
         print('O')
     if erro == 2:
