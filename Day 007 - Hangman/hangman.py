@@ -2,24 +2,24 @@ from random import choice
 
 def desenha(erro):
     if erro == 1:
-        print('O')
+        print(' O')
     if erro == 2:
-        print(''' O\n|''')
+        print(''' O\n |''')
     if erro == 3:
-        print('  O\n\|')
+        print('  O\n \|')
     if erro == 4:
-        print('O\n\|/')
+        print('  O\n \|/')
     if erro == 5:
-        print('O\n\|/\n|')
+        print('  O\n \|/\n  |')
     if erro == 6:
-        print('O\n\|/\n|\n/')
+        print('  O\n \|/\n  |\n /')
     if erro == 7:
-        print('O\n\|/\n|\n/\ ')
+        print('  O\n \|/\n  |\n / \ ')
 
 palavras = ['livro', 'banana', 'abacate', 'chave', 'cachorro']
 
 palavra = choice(palavras)
-jogadas = len(palavra)
+jogadas = 6 #no setimo já ta enforcado
 print(palavra)
 oculto = []
 for i in range(0, jogadas):
