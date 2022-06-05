@@ -23,7 +23,7 @@ if opcao == 2:
                     desencripta.append(alfabeto[pos])
                 else:
                     desencripta.append(alfabeto[i-codigo])
-#da erro pra descodificar em ALGUNS CASOS
+#da erro pra descodificar nos casos em que na codificação ele volta do Z pro A (linha 12)
 
 print(''.join(encriptada))
 print(''.join(desencripta))
