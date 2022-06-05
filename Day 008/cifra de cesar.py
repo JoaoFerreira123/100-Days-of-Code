@@ -10,7 +10,7 @@ if opcao == 1:
         for j in range(len(msg)):
             if alfabeto[i] == msg[j]:
                 encriptada.append(alfabeto[i+codigo])
-
+#Se i+código > len(alfabeto) ele buga. até encripta, mas da ruim pra desencriptar
 if opcao == 2:
     for i in range(len(alfabeto)):
         for j in range(len(msg)):
