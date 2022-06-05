@@ -9,13 +9,21 @@ if opcao == 1:
     for i in range(len(alfabeto)):
         for j in range(len(msg)):
             if alfabeto[i] == msg[j]:
-                encriptada.append(alfabeto[i+codigo])
-#Se i+código > len(alfabeto) ele buga. até encripta, mas da ruim pra desencriptar
+                if i+codigo > len(alfabeto)-1:
+                    encriptada.append(alfabeto[(i+codigo)-len(alfabeto)])
+                else:
+                    encriptada.append(alfabeto[i+codigo])
+
 if opcao == 2:
     for i in range(len(alfabeto)):
         for j in range(len(msg)):
             if alfabeto[i] == msg[j]:
-                desencripta.append(alfabeto[i-codigo])
+                if i-codigo	< 0:
+                    pos = (i-codigo)+len(alfabeto)
+                    desencripta.append(alfabeto[pos])
+                else:
+                    desencripta.append(alfabeto[i-codigo])
+#da erro pra descodificar em ALGUNS CASOS
 
 print(''.join(encriptada))
 print(''.join(desencripta))
