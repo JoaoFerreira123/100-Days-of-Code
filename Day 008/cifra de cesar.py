@@ -15,15 +15,14 @@ if opcao == 1:
                     encriptada.append(alfabeto[i+codigo])
 
 if opcao == 2:
-    for i in range(len(alfabeto)):
-        for j in range(len(msg)):
-            if alfabeto[i] == msg[j]:
-                if i-codigo	< 0:
-                    pos = (i-codigo)+len(alfabeto)
+    for i in range(len(msg)):
+        for j in range(len(alfabeto)):
+            if msg[i] == alfabeto[j]:
+                if j-codigo	< 0: 
+                    pos = (j-codigo)+len(alfabeto)
                     desencripta.append(alfabeto[pos])
                 else:
-                    desencripta.append(alfabeto[i-codigo])
-#da erro pra descodificar nos casos em que na codificação ele volta do Z pro A (linha 12)
+                    desencripta.append(alfabeto[j-codigo])
 
 print(''.join(encriptada))
 print(''.join(desencripta))
