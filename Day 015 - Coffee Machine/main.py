@@ -12,3 +12,7 @@ while True:
     else:    
         checkResources(choice, resources, recipe)
         money(choice, resources)
+
+#funciona porém está MAL OTIMIZADO, muita coisa repetida
+#solução otimizada: https://replit.com/@appbrewery/coffee-machine-final#main.py
+#Testar outra versão melhor!!

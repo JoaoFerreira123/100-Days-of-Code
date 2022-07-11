@@ -1,5 +1,4 @@
 
-
 def menu():
     print('O que gostaria?')
     print("""
