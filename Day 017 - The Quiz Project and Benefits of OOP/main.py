@@ -14,4 +14,7 @@ for i in question_data:
 #print(question_bank[0].answer) #answer do objeto da posição 0 da lista
 
 quiz = QuizBrain(question_bank) #aqui ele já cria o quiz e passa a lista com as questões
-quiz.next_question()
+
+while quiz.still_has_questions():
+    quiz.next_question()
+print(f'A sua pontuação final foi: {quiz.score}/{len(question_bank)}')
