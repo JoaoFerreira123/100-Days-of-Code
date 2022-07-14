@@ -14,7 +14,7 @@ def draw(num_sides):
         d.forward(100)
 
 
-for i in range(3, 20):
+for i in range(3, 10):
     d.color(random.choice(colours))
     draw(i)
 
