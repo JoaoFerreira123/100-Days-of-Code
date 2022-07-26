@@ -49,11 +49,10 @@ while gameOn:
     #detectando colisão com o rabo
     #percorre a lista com os segmentos e verifica se a cabeça bateu em algum deles
     #verifica a distância entre a cabeça e cada segmento da cobra
-    for i in snake.segmentos:
-        if i != snake.head:
-            if snake.head.distance(i) < 10:
-                gameOn = False
-                pontuação.gameOver()
+    for i in snake.segmentos[1:]: #ignora o primeiro segmento (head)
+        if snake.head.distance(i) < 10:
+            gameOn = False
+            pontuação.gameOver()
 
 
 
