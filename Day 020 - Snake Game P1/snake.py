@@ -14,13 +14,22 @@ class Snake:
         #Inicia ele como sendo o primeiro quadrado, que é a "cabeça" que guia a cobra
     
     def createSnake(self):
-        for i in starting_pos:
-            s = Turtle('square')
-            s.shapesize(0.5, 0.5)
-            s.speed(10)
-            s.penup()
-            s.goto(i)
-            self.segmentos.append(s)
+        for pos in starting_pos:
+            self.adiciona(pos)
+    
+    def adiciona(self, pos):
+        #adiciona um quadrado na cobra
+        s = Turtle('square')
+        s.shapesize(0.5, 0.5)
+        s.speed(100)
+        s.penup()
+        s.goto(pos)
+        self.segmentos.append(s)
+
+
+    def extend(self):
+        #aumenta o tamanho da cobra
+        self.adiciona(self.segmentos[-1].position()) #adiciona um novo pedaço na posição final (-1)
 
     def move(self):
         #cada quadrado vai para a posição do quadrado anterior

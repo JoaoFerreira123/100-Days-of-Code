@@ -38,10 +38,22 @@ while gameOn:
     #detectando a colisão da snake com comida
     if snake.head.distance(comida) < 15: #se a distância da cabeça da cobra até o objeto comida < 15
         comida.refresh()
+        snake.extend()
         pontuação.comeu()
     
-    
+    #detectando colisão com a parede
+    if snake.head.xcor() > 290 or snake.head.xcor() < -290 or snake.head.ycor() > 290 or snake.head.ycor() < -290:
+        gameOn = False
+        pontuação.gameOver()
 
+    #detectando colisão com o rabo
+    #percorre a lista com os segmentos e verifica se a cabeça bateu em algum deles
+    #verifica a distância entre a cabeça e cada segmento da cobra
+    for i in snake.segmentos:
+        if i != snake.head:
+            if snake.head.distance(i) < 10:
+                gameOn = False
+                pontuação.gameOver()
 
 
 
