@@ -1,7 +1,7 @@
 from turtle import Turtle
 
-starting_pos = [(0, 0), (-20, 0), (-40, 0)]
-moveDistance = 20
+starting_pos = [(0, 0), (-10, 0), (-20, 0)]
+moveDistance = 10
 
 #Classe Snake, que a cada vez que é chamada, cria a cobra com a função createSnake, usando as posições 
 #contidas em starting_pos
@@ -16,6 +16,8 @@ class Snake:
     def createSnake(self):
         for i in starting_pos:
             s = Turtle('square')
+            s.shapesize(0.5, 0.5)
+            s.speed(10)
             s.penup()
             s.goto(i)
             self.segmentos.append(s)

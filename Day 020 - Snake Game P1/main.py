@@ -1,6 +1,8 @@
 from turtle import *
 from snake import Snake
 import time
+from food import Food
+from scoreBoard import Score
 
 screen = Screen()
 
@@ -11,6 +13,8 @@ screen.tracer(0) #desliga as animações da tela
 
 
 snake = Snake()
+comida = Food()
+pontuação = Score()
 
 screen.listen()
 
@@ -29,7 +33,12 @@ while gameOn:
     # só ligando a tela quando os 3 já tiverem movido, dando a impressão de que estão se movendo juntos
     time.sleep(0.1) #da a impressão de se mover mais devagar, dando uma pausa de 0.1s
     snake.move()
+    
 
+    #detectando a colisão da snake com comida
+    if snake.head.distance(comida) < 15: #se a distância da cabeça da cobra até o objeto comida < 15
+        comida.refresh()
+        pontuação.comeu()
     
     
 
