@@ -1,5 +1,3 @@
-import imp
-from re import S
 from turtle import *
 from player import Player
 from cars import Cars
@@ -30,9 +28,8 @@ while gameOn:
     #detecção colisão
     for i in c.carros:
         if i.distance(p) < 20: #distancia do carro ao player
-            l.over()
             gameOn = False
-            
+            l.over()
 
     if p.ycor() > 280:
         p.restart()
