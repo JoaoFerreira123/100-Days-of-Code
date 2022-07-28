@@ -6,11 +6,18 @@ class Ball(Turtle):
         self.shape('circle')
         self.color('white')
         self.penup()
-        self.Xmove = 10
-        self.Ymove = 10
+        self.Xmove = 2.5
+        self.Ymove = 2.5
 
     def move(self):
         self.goto(self.xcor()+self.Xmove, self.ycor()+self.Ymove)
 
-    def quicar(self):
+    def quicarY(self):
         self.Ymove *= -1 #Muda a direção de Y
+
+    def quicarX(self):
+        self.Xmove *= -1 #Muda a direcão de X
+
+    def resetPos(self):
+        self.goto(0, 0)
+        self.quicarX()
