@@ -17,11 +17,11 @@ bola = Ball()
 
 score = Scoreboard()
 
-s.onkey(pDIR.goUp, 'Up')
-s.onkey(pDIR.goDown, 'Down')
+s.onkeypress(pDIR.goUp, 'Up')
+s.onkeypress(pDIR.goDown, 'Down')
 
-s.onkey(pESQ.goUp, 'w')
-s.onkey(pESQ.goDown, 's')
+s.onkeypress(pESQ.goUp, 'w')
+s.onkeypress(pESQ.goDown, 's')
 
 gameOn = True
 
