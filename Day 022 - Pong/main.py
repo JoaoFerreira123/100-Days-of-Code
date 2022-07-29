@@ -1,4 +1,3 @@
-from inspect import trace
 from turtle import *
 from paddle import Paddle
 from ball import Ball
