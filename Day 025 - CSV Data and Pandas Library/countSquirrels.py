@@ -8,3 +8,5 @@ cores = dados['Primary Fur Color']
 
 with open('Day 025 - CSV Data and Pandas Library\ContagemEsquilos.csv', 'w') as contEsq:
     contEsq.writelines(str(cores.value_counts()))
+
+#também poderia usar o método .to_csv() do Pandas
