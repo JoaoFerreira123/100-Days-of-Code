@@ -12,19 +12,24 @@ b = Turtle(imagem)
 dados = pandas.read_csv('Day 025 - CSV Data and Pandas Library\estados.csv')
 corX = dados['x']
 corY = dados['y']
-
-#Cria os pontos de teste das posições
-#dots = []
-#for i in range(len(corX)):
-#    x = Turtle('circle')
-#    x.up()
-#    x.goto(corX[i], corY[i])
-#    dots.append(x)
-
-#Pop-up entrada de dados
-estado = s.textinput('Adivinhe o Estado', 'Qual Estado é o Próximo? ')
+estados = dados['nome'].to_list()
 
 
+pontos = 0
+
+while pontos < 28:
+    estado = s.textinput(f'{pontos}/28 Estados Corretos', 'Qual Estado é o Próximo? ')
+    if estado in estados:
+        pontos += 1
+        acerto = Turtle()
+        acerto.up()
+        acerto.hideturtle()
+        acerto.color('green')
+        linha = dados[dados.nome == estado]
+        acerto.goto(float(linha.x)-15, float(linha.y))
+        acerto.write(estado,False, 'left',('Courier', 10, 'bold'))
+
+    
 #Usado pra não sair da tela quando clicar
 s.mainloop()
 
