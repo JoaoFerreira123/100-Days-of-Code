@@ -14,13 +14,23 @@ corX = dados['x']
 corY = dados['y']
 estados = dados['nome'].to_list()
 
+acertos = []
 
-pontos = 0
+while len(acertos) < 28:
+    estado = s.textinput(f'{len(acertos)}/28 Estados Corretos', 'Qual Estado é o Próximo? ')
+    if estado == 'exit':
+        naoAcertos = []
+        for i in estados:
+            if i not in acertos:
+                naoAcertos.append(i)
+        #Cria um dataFrame a partir da lista naoAcertos
+        estadosFaltantes = pandas.DataFrame(naoAcertos)
+        #Salva os estados não acertados em um arquivo .csv
+        estadosFaltantes.to_csv('Day 025 - CSV Data and Pandas Library\EstadosFaltantes.csv')
+        break
 
-while pontos < 28:
-    estado = s.textinput(f'{pontos}/28 Estados Corretos', 'Qual Estado é o Próximo? ')
     if estado in estados:
-        pontos += 1
+        acertos.append(estado)
         acerto = Turtle()
         acerto.up()
         acerto.hideturtle()
@@ -30,6 +40,3 @@ while pontos < 28:
         acerto.write(estado,False, 'left',('Courier', 10, 'bold'))
 
     
-#Usado pra não sair da tela quando clicar
-s.mainloop()
-
