@@ -1,5 +1,3 @@
-from __future__ import with_statement
-from struct import pack
 from tkinter import * 
 
 janela = Tk()
