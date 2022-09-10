@@ -1,4 +1,4 @@
-from main import *
+from mainV1 import *
 
 #Interface Gráfica
 w = Tk()

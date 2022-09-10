@@ -1,13 +1,15 @@
 from tkinter import *
 from tkinter import messagebox
-import userInterface
+import userInterfaceV1
 import random
 import pyperclip
 
+#Código 100% funcional porém SEM usar JSON para a gravação dos arquivos 
+
 def save():
-    site = userInterface.website.get()
-    email = userInterface.username.get()
-    senha = userInterface.password.get()
+    site = userInterfaceV1.website.get()
+    email = userInterfaceV1.username.get()
+    senha = userInterfaceV1.password.get()
 
     if len(site) == 0 or len(email) == 0 or len(senha) == 0:
         messagebox.showerror(title='Erro', message='Não deixe Nenhum Campo em Branco')
@@ -17,9 +19,9 @@ def save():
         if ok:
             with open('Day 029 - Password Manager\password.txt', 'a+') as arquivo:
                 arquivo.writelines(f'{site} | {email} | {senha}\n')
-            userInterface.website.delete(0, 'end')
-            userInterface.username.delete(0, 'end')
-            userInterface.password.delete(0, 'end')
+            userInterfaceV1.website.delete(0, 'end')
+            userInterfaceV1.username.delete(0, 'end')
+            userInterfaceV1.password.delete(0, 'end')
 
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -36,5 +38,5 @@ def generatePassword():
 
     senhaGerada = ''.join(passwordList)
 
-    userInterface.password.insert(0, senhaGerada)
+    userInterfaceV1.password.insert(0, senhaGerada)
     pyperclip.copy(senhaGerada) #Copia a senha para o clipboard
