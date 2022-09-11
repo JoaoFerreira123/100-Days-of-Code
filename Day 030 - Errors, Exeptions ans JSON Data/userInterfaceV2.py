@@ -18,7 +18,7 @@ label3 = Label(text='Password:')
 label3.grid(row=3, column=0)
 
 website = Entry(width=50)
-website.grid(row=1, column=1, columnspan=2, sticky='ew')
+website.grid(row=1, column=1, sticky='ew')
 website.focus() #ao abrir o programa, já deixa o cursor no espaço pra digitar
 
 username = Entry(width=50)
@@ -34,5 +34,8 @@ btn1.grid(row=3, column=2, )
 
 btn2 = Button(text='Add', width=53, command=save)
 btn2.grid(row=4, column=1, columnspan=2, sticky='ew')
+
+btn3 = Button(text='Search', width=15, command=search)
+btn3.grid(row=1, column=2)
 
 w.mainloop()
